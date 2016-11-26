@@ -60,3 +60,25 @@ For example:
     Log:     /Users/laurent/Development/github/robotframework-rerunfailed/output/log.html
     Report:  /Users/laurent/Development/github/robotframework-rerunfailed/output/report.html
 ```
+
+If you use RIDE, please flowing below.
+
+1. Change "Execution Profile" to "Custom script"
+2. Set "script to run test" to bat file
+```
+C:\Yamldemo\rerun.bat
+```
+3. Set "Arguments", will create output folder at bat path
+```
+--outputdir output
+```
+also, you can use the following syntax in RIDE (Arguments:) to create the output in newfolders dynamically
+```
+--outputdir C:/AutomationLogs/%date:~-4,4%%date:~-10,2%%date:~-7,2% --timestampoutputs
+```
+The above syntax gives you the output in below folder:
+```
+Output:  C:\AutomationLogs\20151125\output-20151125-155017.xml
+Log:     C:\AutomationLogs\20151125\log-20151125-155017.html
+Report:  C:\AutomationLogs\20151125\report-20151125-155017.html
+```
